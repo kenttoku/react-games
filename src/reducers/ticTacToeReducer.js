@@ -1,4 +1,4 @@
-import * as actions from '../actions';
+import { ticTacToeActions as actions } from '../actions';
 
 const initialState = {
   board: [null, null, null, null, null, null, null, null, null],

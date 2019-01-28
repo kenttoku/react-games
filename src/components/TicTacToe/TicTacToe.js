@@ -30,7 +30,7 @@ class TicTacToe extends Component {
     });
 
     return (
-      <div className="tic-tac-toe">
+      <div className="tic-tac-toe mx-auto mt-3">
         {cells}
       </div>
     );

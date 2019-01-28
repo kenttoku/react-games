@@ -4,7 +4,9 @@ import TicTacToe from '../TicTacToe';
 class App extends Component {
   render() {
     return (
-      <TicTacToe />
+      <main className="container">
+        <TicTacToe />
+      </main>
     );
   }
 }
