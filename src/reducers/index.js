@@ -1,9 +1,8 @@
-import * as actions from '../actions';
+import { combineReducers } from 'redux';
+import ticTacToeReducer from './ticTacToeReducer';
 
-const initialState = {};
-
-const reducer = (state=initialState, action) => {
-  return state;
-};
+const reducer = combineReducers({
+  ticTacToe: ticTacToeReducer,
+});
 
 export default reducer;
