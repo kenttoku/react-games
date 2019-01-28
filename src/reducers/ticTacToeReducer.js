@@ -1,7 +1,7 @@
 import { ticTacToeActions as actions } from '../actions';
 
 const initialState = {
-  board: [null, null, null, null, null, null, null, null, null],
+  board: ['null', 'null', 'null', 'null', 'null', 'null', 'null', 'null', 'null'],
 };
 
 const ticTacToeReducer = (state = initialState, action) => state;
