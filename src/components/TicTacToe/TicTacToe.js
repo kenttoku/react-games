@@ -45,7 +45,7 @@ class TicTacToe extends Component {
       }
     });
 
-    console.log(winner);
+    const winDisplay = winner ? `Winner is ${winner}` : '';
 
     const cells = board.map((cell, index) => {
       let column;
@@ -97,6 +97,7 @@ class TicTacToe extends Component {
         >
           Reset Board
         </button>
+        <p>{winDisplay}</p>
       </React.Fragment>
     );
   }
