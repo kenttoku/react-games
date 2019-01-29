@@ -1,5 +1,5 @@
-export const PLAY_CELL = 'PLAY_CELL';
-export const playCell = cell => ({
-  type: PLAY_CELL,
+export const TTT_PLAY_CELL = 'TTT_PLAY_CELL';
+export const tttPlayCell = cell => ({
+  type: TTT_PLAY_CELL,
   cell,
 });

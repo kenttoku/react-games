@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './TicTacToe.css';
-import { playCell } from '../../actions';
+import { tttPlayCell } from '../../actions';
 
 class TicTacToe extends Component {
   onClick(cell) {
-    const { dispatch } = this.props;
-    dispatch(playCell(cell));
+    const { board, dispatch } = this.props;
+    if (!board[cell]) {
+      dispatch(tttPlayCell(cell));
+    }
   }
 
   render() {
