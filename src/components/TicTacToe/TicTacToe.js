@@ -17,7 +17,35 @@ class TicTacToe extends Component {
   }
 
   render() {
+    // 0 1 2
+    // 3 4 5
+    // 6 7 8
     const { board } = this.props;
+    const winConditions = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+
+    let winner;
+
+    winConditions.forEach((condition) => {
+      const first = board[condition[0]];
+      const second = board[condition[1]];
+      const third = board[condition[2]];
+      if (first) {
+        if (first === second && first === third) {
+          winner = first;
+        }
+      }
+    });
+
+    console.log(winner);
 
     const cells = board.map((cell, index) => {
       let column;
@@ -47,6 +75,7 @@ class TicTacToe extends Component {
       return (
         <button
           type="button"
+          disabled={winner}
           onClick={() => this.play(index)}
           key={`ttt-${row}-${column}`}
           className={`ttt-cell ttt-${row}-${column} ${borderClasses}`}
