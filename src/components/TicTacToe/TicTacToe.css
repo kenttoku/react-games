@@ -14,6 +14,16 @@
   align-items: center;
   background-color: white;
   font-size: 50px;
+  outline: none;
+}
+
+.ttt-cell:focus { 
+  outline: none;
+}
+
+.ttt-cell:disabled { 
+  outline: none;
+  color: black;
 }
 
 .ttt-top-left { grid-area: ttt-top-left; }
