@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './TicTacToe.css';
-import { tttPlayCell } from '../../actions';
+import { tttPlayCell, tttResetBoard } from '../../actions';
 
 class TicTacToe extends Component {
-  onClick(cell) {
+  play(cell) {
     const { board, dispatch } = this.props;
     if (!board[cell]) {
       dispatch(tttPlayCell(cell));
     }
+  }
+
+  reset() {
+    const { dispatch } = this.props;
+    dispatch(tttResetBoard());
   }
 
   render() {
@@ -42,7 +47,7 @@ class TicTacToe extends Component {
       return (
         <button
           type="button"
-          onClick={() => this.onClick(index)}
+          onClick={() => this.play(index)}
           key={`ttt-${row}-${column}`}
           className={`ttt-cell ttt-${row}-${column} ${borderClasses}`}
         >
@@ -52,9 +57,18 @@ class TicTacToe extends Component {
     });
 
     return (
-      <div className="tic-tac-toe mx-auto">
-        {cells}
-      </div>
+      <React.Fragment>
+        <h1>Tic Tac Toe</h1>
+        <div className="tic-tac-toe mx-auto">
+          {cells}
+        </div>
+        <button
+          type="button"
+          onClick={() => this.reset()}
+        >
+          Reset Board
+        </button>
+      </React.Fragment>
     );
   }
 }
