@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './TicTacToe.css';
+import { playCell } from '../../actions';
 
 class TicTacToe extends Component {
+  onClick(cell) {
+    const { dispatch } = this.props;
+    dispatch(playCell(cell));
+  }
+
   render() {
     const { board } = this.props;
 
@@ -31,7 +37,16 @@ class TicTacToe extends Component {
         borderClasses += ' border-bottom-0';
       }
 
-      return <div key={`ttt-${row}-${column}`} className={`ttt-cell ttt-${row}-${column} ${borderClasses}`}>{cell}</div>;
+      return (
+        <button
+          type="button"
+          onClick={() => this.onClick(index)}
+          key={`ttt-${row}-${column}`}
+          className={`ttt-cell ttt-${row}-${column} ${borderClasses}`}
+        >
+          {cell}
+        </button>
+      );
     });
 
     return (
