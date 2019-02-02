@@ -83,19 +83,22 @@ class TicTacToe extends Component {
     });
 
     return (
-      <React.Fragment>
-        <h1>Tic Tac Toe</h1>
-        <div className="tic-tac-toe mx-auto">
+      <section className="game-area">
+        <h1 className="game-header">Tic Tac Toe</h1>
+        <div className="game-main tic-tac-toe mx-auto">
           {cells}
         </div>
-        <button
-          type="button"
-          onClick={() => this.reset()}
-        >
+        <div className="game-controls">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => this.reset()}
+          >
           Reset Board
-        </button>
-        <p>{winDisplay}</p>
-      </React.Fragment>
+          </button>
+          <p>{winDisplay}</p>
+        </div>
+      </section>
     );
   }
 }

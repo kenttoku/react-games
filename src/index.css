@@ -12,3 +12,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.game-area {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "game-header" "game-main" "game-controls";
+  grid-gap: 20px 0;
+  text-align: center;
+}
+
+.game-header { grid-area: game-header; }
+
+.game-main { grid-area: game-main; }
+
+.game-controls { grid-area: game-controls; }
