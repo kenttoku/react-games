@@ -43,3 +43,10 @@
 .ttt-bottom-center { grid-area: ttt-bottom-center; }
 
 .ttt-bottom-right { grid-area: ttt-bottom-right; }
+
+@media only screen and (min-width: 600px) {
+  .tic-tac-toe {
+    width: 500px;
+    height: 500px;
+  }
+}
